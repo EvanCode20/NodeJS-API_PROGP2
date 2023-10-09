@@ -1,0 +1,57 @@
+###
+GET https://localhost:3001/api/user HTTP/1.1
+
+###
+POST https://localhost:3001/api/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "user1",
+    "password": "password"
+}
+
+###
+POST https://localhost:3001/api/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "user1",
+    "password": "password"
+}
+
+
+###
+GET https://localhost:3001/api/post/all HTTP/1.1
+
+###
+GET https://localhost:3001/api/post HTTP/1.1
+Content-Type: application/json
+
+{
+    "userId" : "user1"
+}
+
+
+
+###
+POST https://localhost:3001/api/post HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNDYxNWFjNWYwNjFmODVhNzBhNWRiIiwidXNlcm5hbWUiOiJ1c2VyMSIsImlhdCI6MTY5Njg4MzUzMSwiZXhwIjoxNjk2ODg3MTMxfQ.BTrZC16Z3UuljV_D2du6wrMGwkqkDcqjp0chYdbHj2M
+
+
+{
+    "subject" : "This is the subject for the second issue.",
+    "description" : "This is the description for the second issue.",
+    "userId": "user1"
+}
+
+###
+DELETE https://localhost:3001/api/post HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNDYxNWFjNWYwNjFmODVhNzBhNWRiIiwidXNlcm5hbWUiOiJ1c2VyMSIsImlhdCI6MTY5Njg4MzUzMSwiZXhwIjoxNjk2ODg3MTMxfQ.BTrZC16Z3UuljV_D2du6wrMGwkqkDcqjp0chYdbHj2M
+
+
+{
+    "id": "652463e12a8ae218bc542f0d"
+}
+
