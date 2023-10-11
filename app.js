@@ -9,10 +9,11 @@ const options = {
     server:{sslCA:cert}
 };
 
-const connstring = "mongodb+srv://admin:admin@cluster0.9hippzx.mongodb.net/?retryWrites=true&w=majority"
+const connstring = "mongodb+srv://admin:admin@cluster0.9hippzx.mongodb.net/?retryWrites=true&w=majority&ssl=true"
 
 const userRoutes = require('./routes/user');
 const postRoutes = require('./routes/post');
+
 
 mongoose.connect(connstring)
 .then(() =>

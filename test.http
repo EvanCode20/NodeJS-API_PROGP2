@@ -1,7 +1,7 @@
-###
+### Get All Users
 GET https://localhost:3001/api/user HTTP/1.1
 
-###
+### Register New User
 POST https://localhost:3001/api/user/register HTTP/1.1
 Content-Type: application/json
 
@@ -10,7 +10,7 @@ Content-Type: application/json
     "password": "password"
 }
 
-###
+### Login User
 POST https://localhost:3001/api/user/login HTTP/1.1
 Content-Type: application/json
 
@@ -20,10 +20,11 @@ Content-Type: application/json
 }
 
 
-###
+### Get All Posts
 GET https://localhost:3001/api/post/all HTTP/1.1
 
-###
+
+### Get A Users Posts
 GET https://localhost:3001/api/post HTTP/1.1
 Content-Type: application/json
 
@@ -33,10 +34,10 @@ Content-Type: application/json
 
 
 
-###
+### Create A Post
 POST https://localhost:3001/api/post HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNDYxNWFjNWYwNjFmODVhNzBhNWRiIiwidXNlcm5hbWUiOiJ1c2VyMSIsImlhdCI6MTY5Njg4MzUzMSwiZXhwIjoxNjk2ODg3MTMxfQ.BTrZC16Z3UuljV_D2du6wrMGwkqkDcqjp0chYdbHj2M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNDYxNWFjNWYwNjFmODVhNzBhNWRiIiwidXNlcm5hbWUiOiJ1c2VyMSIsImlhdCI6MTY5NzA1MjUwNywiZXhwIjoxNjk3MDU2MTA3fQ.oO8i22qK5YrggoQmyH995m8qQMsQHMaZuHIrYmr1xY4
 
 
 {
@@ -45,13 +46,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyN
     "userId": "user1"
 }
 
-###
-DELETE https://localhost:3001/api/post HTTP/1.1
+### Delete A Post
+DELETE https://localhost:3001/api/post/652463e12a8ae218bc542f0d HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNDYxNWFjNWYwNjFmODVhNzBhNWRiIiwidXNlcm5hbWUiOiJ1c2VyMSIsImlhdCI6MTY5Njg4MzUzMSwiZXhwIjoxNjk2ODg3MTMxfQ.BTrZC16Z3UuljV_D2du6wrMGwkqkDcqjp0chYdbHj2M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNDYxNWFjNWYwNjFmODVhNzBhNWRiIiwidXNlcm5hbWUiOiJ1c2VyMSIsImlhdCI6MTY5NzA2MDM0MSwiZXhwIjoxNjk3MDYzOTQxfQ.aaYWyhIFm22aPJuAAu35TiU4nnAx_KwK_3dU0jgnq4o
 
 
-{
-    "id": "652463e12a8ae218bc542f0d"
-}
 
