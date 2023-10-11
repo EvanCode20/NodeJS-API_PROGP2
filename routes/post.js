@@ -42,6 +42,7 @@ router.post('', checkAuth, (req,res)=>{
     }
 })
 
+//delete a post
 router.delete('/:id', checkAuth, async(req,res)=>{
     const postId = req.params.id;
     try{
