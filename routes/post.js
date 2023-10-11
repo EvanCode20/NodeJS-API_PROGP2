@@ -3,7 +3,7 @@ const router = express.Router();
 const Post = require('../models/post');
 const checkAuth = require('../check-auth.js')
 
-//return all posts
+//return all posts for 1 user
 router.get('', (req,res)=>{
     Post.find({userId: req.body.userId}).then((posts)=> {
         res.json({
@@ -13,6 +13,7 @@ router.get('', (req,res)=>{
     })
 })
 
+//return all posts
 router.get('/all', (req,res)=>{
     Post.find().then((posts)=> {
         res.json({

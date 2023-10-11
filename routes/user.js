@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const checkAuth = require('../check-auth');
 const TOKEN_KEY = "thisismytokenkey"
 
 //get all users
@@ -98,12 +99,23 @@ router.post('/login',async (req,res)=>{
 })
 
 
+//delete user
+router.delete('/:id', checkAuth, async(req,res)=>{
+  const userId = req.params.id;
+  try{
+      const user = await User.findById(userId);
 
-router.delete('/:id',(req,res)=>{
-    User.deleteOne({_id: req.params.id})
-    .then((result)=> {
-        res.status(200).json({message : "user deleted"})
-    });
+      await User.deleteOne({_id:userId})
+
+      res.status(201).json({
+          message: 'User was deleted'
+      })
+  }
+  catch(error){
+      return res.status(404).json({
+          message: 'User not found'
+      })
+  }
 })
 
 module.exports = router
