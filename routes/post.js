@@ -42,10 +42,22 @@ router.post('', checkAuth, (req,res)=>{
     }
 })
 
-router.delete('', checkAuth, (req,res)=>{
-    Post.deleteOne({subject: req.params.subject})
-    .then(()=> {
-        res.status(200).json({message : "post deleted"})
-    });
+router.delete('/:id', checkAuth, async(req,res)=>{
+    const postId = req.params.id;
+    try{
+        const post = await Post.findById(postId);
+
+        await Post.deleteOne({_id:postId})
+
+        res.status(201).json({
+            message: 'Post was deleted'
+        })
+    }
+    catch(error){
+        return res.status(404).json({
+            message: 'Post not found'
+        })
+    }
+   
 })
 module.exports = router

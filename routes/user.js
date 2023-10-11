@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs')
 const TOKEN_KEY = "thisismytokenkey"
 
+//get all users
 router.get('',(req,res)=> {
     User.find().then((users)=>{
         res.json({
