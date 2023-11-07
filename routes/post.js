@@ -3,6 +3,7 @@ const router = express.Router();
 const Post = require('../models/post');
 const checkAuth = require('../check-auth.js')
 
+
 //return all posts for 1 user
 router.get('', (req,res)=>{
     Post.find({userId: req.body.userId}).then((posts)=> {
@@ -13,8 +14,10 @@ router.get('', (req,res)=>{
     })
 })
 
+
+
 //return all posts
-router.get('/all', (req,res)=>{
+router.get('/all',checkAuth, (req,res)=>{
     Post.find().then((posts)=> {
         res.json({
             message: 'Posts found',
@@ -23,8 +26,10 @@ router.get('/all', (req,res)=>{
     })
 })
 
+
+
 //post a post
-router.post('', checkAuth, (req,res)=>{
+router.post('',checkAuth, (req,res)=>{
     try{
         const post = Post({
             subject: req.body.subject,
@@ -42,6 +47,7 @@ router.post('', checkAuth, (req,res)=>{
         console.log(err);
     }
 })
+
 
 //delete a post
 router.delete('/:id', checkAuth, async(req,res)=>{

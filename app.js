@@ -4,7 +4,9 @@ const urlPrefix = '/api'
 const mongoose = require('mongoose')
 const fs = require('fs');
 const { url } = require('inspector')
-const cert = fs.readFileSync('keys/certificate.pem');
+const helmet = require('helmet');
+const  morgan = require('morgan')
+const cert = fs.readFileSync('keys/localhost.pem');
 const options = {
     server:{sslCA:cert}
 };
@@ -37,6 +39,8 @@ app.use((reg,res,next)=>
  next();
 });
 
+app.use(helmet());
+app.use(morgan('combined'));
 
 app.use(urlPrefix+'/user',userRoutes);
 app.use(urlPrefix+'/post',postRoutes);

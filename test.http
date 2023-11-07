@@ -1,28 +1,35 @@
 ### Get All Users
 GET https://localhost:3001/api/user HTTP/1.1
 
+
+
+
 ### Register New User
 POST https://localhost:3001/api/user/register HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "user1",
-    "password": "password"
+    "username": "user13",
+    "password": "user13"
 }
+
+
 
 ### Login User
 POST https://localhost:3001/api/user/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "user1",
-    "password": "password"
+    "username": "user2",
+    "password": "password2"
 }
+
+
 
 
 ### Get All Posts
 GET https://localhost:3001/api/post/all HTTP/1.1
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNzIyZTQ0MmRlMjEwZGU3MDEzNGJjIiwidXNlcm5hbWUiOiJ1c2VyMiIsImlhdCI6MTY5OTM2OTI2OSwiZXhwIjoxNjk5MzcyODY5fQ.zaed73cMN6XQvUqxI6Srj-JJKBVUdZnL1cP0Lon-fJk
 
 ### Get A Users Posts
 GET https://localhost:3001/api/post HTTP/1.1
@@ -33,23 +40,23 @@ Content-Type: application/json
 }
 
 
-
 ### Create A Post
 POST https://localhost:3001/api/post HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNDYxNWFjNWYwNjFmODVhNzBhNWRiIiwidXNlcm5hbWUiOiJ1c2VyMSIsImlhdCI6MTY5NzA1MjUwNywiZXhwIjoxNjk3MDU2MTA3fQ.oO8i22qK5YrggoQmyH995m8qQMsQHMaZuHIrYmr1xY4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNzIyZTQ0MmRlMjEwZGU3MDEzNGJjIiwidXNlcm5hbWUiOiJ1c2VyMiIsImlhdCI6MTY5OTM1ODA2MSwiZXhwIjoxNjk5MzYxNjYxfQ.GH5IBKgHCEyc7KmBl67Om35miQ3CAY2lifXTc4-7PFM
 
 
 {
-    "subject" : "This is the subject for the second issue.",
-    "description" : "This is the description for the second issue.",
+    "subject" : "Subject for this issue is: here is my subject ahahahaha",
+    "description" : "THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of textTHis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.THis is alot of text.",
     "userId": "user1"
 }
 
+
 ### Delete A Post
-DELETE https://localhost:3001/api/post/652463e12a8ae218bc542f0d HTTP/1.1
+DELETE https://localhost:3001/api/post/654a4c1ebed55e5a3a34800e HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNDYxNWFjNWYwNjFmODVhNzBhNWRiIiwidXNlcm5hbWUiOiJ1c2VyMSIsImlhdCI6MTY5NzA2MDM0MSwiZXhwIjoxNjk3MDYzOTQxfQ.aaYWyhIFm22aPJuAAu35TiU4nnAx_KwK_3dU0jgnq4o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNzIyZTQ0MmRlMjEwZGU3MDEzNGJjIiwidXNlcm5hbWUiOiJ1c2VyMiIsImlhdCI6MTY5OTM2OTI2OSwiZXhwIjoxNjk5MzcyODY5fQ.zaed73cMN6XQvUqxI6Srj-JJKBVUdZnL1cP0Lon-fJk
 
 
 

@@ -6,6 +6,8 @@ const bcrypt = require('bcryptjs');
 const checkAuth = require('../check-auth');
 const TOKEN_KEY = "thisismytokenkey"
 
+
+
 //get all users
 router.get('',(req,res)=> {
     User.find().then((users)=>{
@@ -15,6 +17,7 @@ router.get('',(req,res)=> {
         })
     })
 })
+
 
 //register user
 router.post('/register',async (req,res)=>{
